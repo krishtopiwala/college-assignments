@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-3 | jQuery</title>
+    <style>
+        #box {
+            display: none;
+            height: 200px;
+            width: 200px;
+            background-color: violet;
+            margin-bottom: 15px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 3. Write jQuery code to toggle the visibility of a div element when a button is clicked. The div should start as hidden, and clicking the button should alternate between showing and hiding it.  -->
+
+    <div id="box"></div>
+    <button id="showHide">Show/Hide</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#showHide').click(function() {
+                $('#box').toggle();
+            });
+        });
+    </script>
+</body>
+</html>
