@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-6 | AJAX</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Develop a webpage that retrieves and displays data from a public JSON API (e.g., a list of books, movies, or weather information) using AJAX. Display this data in a visually appealingmanner on the page. -->
+
+    <h1>Popular Books</h1>
+    <div class="book-list" id="bookList">Loading books...</div>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "https://openlibrary.org/subjects/popular.json?limit=10",
+                method: "GET",
+                success: function(response) {
+                    $('#bookList').empty();
+                    const books = response.works;
+
+                    books.forEach(book => {
+                        const bookHTML = `
+                            <div class="book">
+                                <h3>${book.title}</h3>
+                                <p>by ${book.authors.map(author => author.name).join(", ")}</p>
+                            </div>
+                        `;
+                        $('#bookList').append(bookHTML);
+                    });
+                },
+                error: function() {
+                    $('#bookList').html("Failed to load books.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-7 | AJAX</title>
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Create an autocomplete search feature using AJAX and jQuery. When users start typing a query into a search input field, dynamically fetch and display matching results from an API as dropdown suggestions. -->
+
+    <div class="popup">
+        <h2>Autocomplete</h2>
+        <input type="text" id="auto_check">
+    </div>
+
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        var data = [];
+        $.getJSON('jsonData.json', function(result) {
+            $.each(result.entries, function(index, val) {
+                data.push(val);
+            });
+        });
+        console.log(data);
+
+        $("#auto_check").autocomplete({
+            source: data
+        });
+    </script>
+</body>
+</html>
