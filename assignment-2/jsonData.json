@@ -1,0 +1,37 @@
+{
+    "entries": [
+        {
+            "label": "HTML"
+        },
+        {
+            "label": "CSS"
+        },
+        {
+            "label": "JavaScript"
+        },
+        {
+            "label": "Java"
+        },
+        {
+            "label": "C"
+        },
+        {
+            "label": "C++"
+        },
+        {
+            "label": "C#"
+        },
+        {
+            "label": "PHP"
+        },
+        {
+            "label": ".Net"
+        },
+        {
+            "label": "ReactJS"
+        },
+        {
+            "label": "Node.js"
+        }
+    ]
+}
