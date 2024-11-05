@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            /* background: linear-gradient(55deg, gold, 50%, #333 0%); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            height: 400px;
+            width: 700px;
+            border: 5px solid #fff;
+            box-shadow: 3px 3px 10px #000;
+            position: relative;
+        }
+
+        .slide-container {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide-container .slide {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            display: none;
+        }
+
+        .slide-container .slide img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .slide-container .active {
+            display: block;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="slide-container">
+            <div class="slide active">
+                <img src="./images/portfolio-img-3.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./images/portfolio-img-7.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./images/portfolio-img-8.jpg" alt="">
+            </div>
+        </div>
+
+        <button id="previous">Previous</button>
+        <button id="next">Next</button>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#previous').click(function() {
+                $('.container').find('.active').prev().addClass('active');
+                $('.container').find('.active').next().removeClass('active');
+            });
+
+            $('#next').click(function() {
+                $('.container').find('.active').prev().removeClass('active');
+                $('.container').find('.active').next().addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
